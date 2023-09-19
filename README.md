@@ -28,11 +28,11 @@ Hace uso de requestAnimationFrame() dandole como argumento el que será nuestro 
 
 Usa el id del cuadro de animacion para detenerla.
 
-## #handleTimers(deltaTime)
+### #handleTimers(deltaTime)
 
 Usando el deltaTime recibido para usar nuestros contadores internos podremos manejar actualizaciones segun un tiempo transcurrido ya sea en milisegundos o en 'ticks'. Como valores iniciales ambos pretenden ser de 1 segundo pero eso debe ser configurado a medida del usuiario.
 
-## #clearCanvas
+### #clearCanvas
 
 Utiliza el metodo clear() visto en la clase Canvas.
 
