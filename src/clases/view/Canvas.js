@@ -1,4 +1,4 @@
-import { getCanvas } from '/src/index.js'
+import { getCanvas, ubication } from '/src/index.js'
 
 export class Canvas {
 	constructor() {
@@ -21,8 +21,8 @@ export class Canvas {
 		this.canvas = canvas
 		this.context = context
 
-		this.size.height = this.canvas.height
-		this.size.width = this.canvas.width
+		this.size.height = canvas.height
+		this.size.width = canvas.width
 	}
 
 	clear() {
@@ -40,10 +40,10 @@ export class Canvas {
 
 	getSizes() {
 		return {
-			top: this.position.y,
-			bottom: this.size.height,
-			right: this.size.width,
-			left: this.position.x,
+			top: ubication(this).top,
+			bottom: ubication(this).bottom,
+			right: ubication(this).right,
+			left: ubication(this).left,
 		}
 	}
 }

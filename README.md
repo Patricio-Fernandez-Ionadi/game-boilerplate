@@ -2,7 +2,7 @@
 
 path ./src/clases/view
 
-Utiliza la funcion `getCanvas()` para crear el elemento, el contexto y setear su tamaño al momento de instanciarse.
+Utiliza la funcion `getCanvas()`\* para crear el elemento, el contexto y setear su tamaño al momento de instanciarse.
 Ofrece tres metodos uno para limpiar el canvas otro para obtener el contexto y otro para obtener la posicion de alguno de sus lados obteniendola como:
 
 `getSizes().top` , `getSizes().left` , etc.
