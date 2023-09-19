@@ -8,7 +8,7 @@ export function getCanvas({ on, size }) {
 	const context = canvas.getContext('2d')
 
 	// style
-	canvas.style.backgroundColor = 'green'
+	// canvas.style.backgroundColor = 'green'
 	canvas.style.position = 'absolute'
 	canvas.style.top = '50%'
 	canvas.style.left = '50%'
