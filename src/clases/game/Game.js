@@ -5,18 +5,18 @@ export class Game {
 		this.canvas = null
 		this.context = null
 		this.timer = {
+			counter: 0,
 			fps: 0,
 			aps: 0,
 			fpsCounter: 0,
 			apsCounter: 0,
 			tick: 1 * 1000,
-			counter: 0,
+			tickCounter: 0,
 			tickUpdate: false,
 			frame_id: null,
 		}
 		this.keyboard = {}
 
-		this.frameId = null
 		this.isRunning = false
 		this.over = false
 
@@ -25,7 +25,7 @@ export class Game {
 
 	// PUBLIC
 	play() {
-		if (!this.frameId) this.#startAnimation()
+		if (!this.timer.frame_id) this.#startAnimation()
 
 		this.isRunning = true
 	}
@@ -38,12 +38,11 @@ export class Game {
 		this.keyboard = new Keyboard()
 	}
 	#startAnimation() {
-		this.frameId = window.requestAnimationFrame(this.#loop.bind(this))
+		this.timer.frame_id = window.requestAnimationFrame(this.#loop.bind(this))
 	}
 	#stopAnimation() {
-		if (this.frameId) window.cancelAnimationFrame(this.frameId)
+		if (this.timer.frame_id) window.cancelAnimationFrame(this.timer.frame_id)
 	}
-
 	#handleTimers(deltaTime) {
 		// control por tick
 		if (this.timer.tickCounter > this.timer.tick) {
@@ -71,7 +70,6 @@ export class Game {
 	}
 
 	// WRITTEABLE CODE
-
 	#draw() {
 		this.timer.fpsCounter++
 		/* // ------- ######## ------- // */
@@ -107,6 +105,6 @@ export class Game {
 		/* // ------- ######## ------- // */
 		/* // ------- ######## ------- // */
 		if (this.over) this.#stopAnimation()
-		this.frameId = window.requestAnimationFrame(this.#loop.bind(this))
+		this.timer.frame_id = window.requestAnimationFrame(this.#loop.bind(this))
 	}
 }
